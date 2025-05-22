@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke Generator</title>
+</head>
+<body>
+    <h1>Here's a Joke for You 🤡</h1>
+    <p>{{ joke }}</p>
+
+    <form method="get" action="/">
+        <label for="category">Choose a category:</label>
+        <select name="category" id="category">
+            <option value="Any" {% if category == 'Any' %}selected{% endif %}>Any</option>
+            <option value="Programming" {% if category == 'Programming' %}selected{% endif %}>Programming</option>
+            <option value="Misc" {% if category == 'Misc' %}selected{% endif %}>Misc</option>
+            <option value="Dark" {% if category == 'Dark' %}selected{% endif %}>Dark</option>
+            <option value="Pun" {% if category == 'Pun' %}selected{% endif %}>Pun</option>
+        </select>
+        <button type="submit">Get Joke</button>
+    </form>
+</body>
+</html>
