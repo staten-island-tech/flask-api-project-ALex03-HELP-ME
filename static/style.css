@@ -1,0 +1,22 @@
+body {
+    background-color: red;
+    color: white;
+    font-family: Arial, sans-serif;
+    
+    /* Centering styles */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical centering */
+    align-items: center;       /* horizontal centering */
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Optional container for API content */
+.api-container {
+    background-color: red; /* Not needed if the body is already red, but okay */
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+}
