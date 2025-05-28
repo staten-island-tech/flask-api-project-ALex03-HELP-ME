@@ -1,17 +1,9 @@
-from flask import Flask, render_template, request
-import requests
-
-app = Flask(__name__)
-
-JOKE_API_URL = "https://v2.jokeapi.dev/joke/Any"
-
-@app.route("/", methods=["GET"])
 from flask import Flask, render_template, request, jsonify
 import requests
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
     category = request.args.get("category", "Any")
     params = {
@@ -35,13 +27,10 @@ def index():
         return render_template("index.html", joke=joke, category=category)
 
     except requests.exceptions.RequestException as e:
-        # Network or API error
         return render_template("error.html", error_message=str(e)), 503
-    except Exception as e:
-        # Unexpected error
+    except Exception:
         return render_template("error.html", error_message="An unexpected error occurred."), 500
 
-# Custom error handler for 404
 @app.errorhandler(404)
 def not_found(error):
     return render_template("error.html", error_message="404 - Page Not Found"), 404
