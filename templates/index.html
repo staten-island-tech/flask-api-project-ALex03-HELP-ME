@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Joke Generator</title>
+    <title>Alex Generator</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
 </head>
 <body>
-    <h1>Here's a Joke for You 🤡</h1>
+    <h1>Here's a Alexander Lin for You 🤡</h1>
     <p>{{ joke }}</p>
 
     <form method="get" action="/">
@@ -21,7 +21,7 @@
             <option value="Dark" {% if category == 'Dark' %}selected{% endif %}>Dark</option>
             <option value="Pun" {% if category == 'Pun' %}selected{% endif %}>Pun</option>
         </select>
-        <button type="submit">Get Joke</button>
+        <button type="submit">Get Alexander</button>
     </form>
 </body>
 </html>
